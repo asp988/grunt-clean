@@ -1,0 +1,23 @@
+$font-sans: 'Roboto Condensed', sans-serif;
+$font-serif: 'PT Serif', serif;
+$basic-color: #2e2e2e;
+$brand-color: #009846;
+$white-color: #ffffff;
+$base-font-size: 14px;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic);
+@import 'compass';
+@import 'compass/reset';
+
+::selection{
+	background-color: $basic-color;
+	color: $white-color;
+}
+
+
+
+
+
+@import 'desktop';
+@import 'mobile';
