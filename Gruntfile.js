@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         tasks: ['compass:dev']
       },
       js: {
-        files: ['js/*.js'],
+        files: ['js/src/*.js', 'js/*.js'],
         tasks: ['jshint', 'uglify:dev']
       },
       livereload: {
@@ -22,6 +22,7 @@ module.exports = function (grunt) {
         files: [
           '*.html',
           'css/style.css',
+          'js/src/*.js',
           'js/*.js',
           'images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
