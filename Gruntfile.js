@@ -114,10 +114,8 @@ module.exports = function (grunt) {
         base: './',
         minify: true
       },
-      // The source file
-      src: 'index.html',
-      // The destination file
-      dest: 'crit.html'
+      src: ['*.html', '*/*.html', '!critical-path-html/*'],
+      dest: 'critical-path-html/'
       }
     }
 
