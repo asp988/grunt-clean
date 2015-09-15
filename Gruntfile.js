@@ -109,13 +109,27 @@ module.exports = function (grunt) {
     },
 
     critical: {
-    dist: {
-      options: {
-        base: './',
-        minify: true
-      },
-      src: ['*.html', '*/*.html', '!critical-path-html/*'],
-      dest: 'critical-path-html/'
+      dist: {
+        options: {
+          base: './',
+          minify: true
+        },
+        src: ['*.html', '*/*.html', '!critical-path-html/*'],
+        dest: 'critical-path-html/',
+      }
+    },
+
+    'string-replace': {
+      dist: {
+        files: {
+          'critical-path-html/': ['critical-path-html/**/*.html'],
+        },
+        options: {
+          replacements: [{
+            pattern: /@import url\([\s\S]+?\);/g,
+            replacement: ''
+          }]
+        }
       }
     }
 
@@ -128,6 +142,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-critical');
+  grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.registerTask('build', [
     'jshint',
@@ -144,5 +159,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('crit', ['critical']);
+
+  grunt.registerTask('replace', ['string-replace']);
 
 };
