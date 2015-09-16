@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         tasks: ['compass:dev']
       },
       js: {
-        files: ['js/src/*.js', 'js/*.js'],
+        files: ['js/src/*.js'],
         tasks: ['jshint', 'uglify:dev']
       },
       livereload: {
